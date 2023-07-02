@@ -1,0 +1,21 @@
+{
+  "name":"Page to PDF Converter",
+  "description":"Расширение конвертирует страницу в PDF",
+  "version":"0.0.1",
+  "manifest_version":3,
+  "permissions": ["contextMenus", "storage", "scripting"],
+  "icons": {
+      "128": "logo128.png",
+      "16": "logo16.png",
+      "48": "logo48.png"
+   },
+  "background": {
+      "service_worker": "background.js",
+      "type": "module"
+   },
+   "content_scripts": [
+    {
+      "js": ["content.js", "jspdf.umd.min.js", "html2canvas.min.js"],
+      "matches": ["https://*/*", "http://*/*"]
+    }]
+}
